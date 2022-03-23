@@ -1,5 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
 # Compiled output
 /dist
 /tmp
@@ -10,6 +18,10 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+
+# dependencies
+node_modules/
+bower_components/
 
 # IDEs and editors
 .idea/
@@ -36,7 +48,20 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+.angular/
+
+# e2e
+e2e/*.js
+e2e/*.map
 
 # System files
 .DS_Store
 Thumbs.db
+
+# End of https://www.toptal.com/developers/gitignore/api/angular
