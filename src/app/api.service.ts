@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.get<Array<IUser>>(`${this.API_GATEWAY}users`, { observe: 'response' });
   }
 
+  getTestUser(): Observable<HttpResponse<IUser>> {
+    return this.http.get<IUser>(`${this.API_GATEWAY}testuser`, { observe: 'response' });
+  }
+
   /* POST calls */
   // addProduct(product: IAddProductObject): Observable<HttpResponse<any>> {
   //   return this.http.post<any>(`${this.API_GATEWAY}product`, product, { observe: 'response' });

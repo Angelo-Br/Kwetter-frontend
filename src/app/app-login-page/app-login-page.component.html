@@ -1,1 +1,11 @@
 <p>app-login-page works!</p>
+<button mat-button (click)="getTestUser()">press this</button> 
+
+
+<mat-card class="catalog-card">
+    <mat-card-header>
+        <mat-card-title name="cart-title">
+            <h1>{{testUser.username}} {{testUser.created}}</h1>
+        </mat-card-title>
+    </mat-card-header>
+</mat-card>
