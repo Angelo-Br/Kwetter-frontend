@@ -8,6 +8,6 @@ RUN npm run build -- --prod
 # stage 2
 FROM nginx:alpine
 COPY ./nginx/default.conf /etc/nginx/nginx.conf
-COPY --from=node /app/dist/KWETTER-FRONTEND /usr/share/nginx/html
+COPY --from=node /app/dist/kwetter-frontend /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
