@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApiService } from '../api.service';
+import { IUser } from '../models/user.model';
 
 @Component({
   selector: 'app-login-page',
@@ -9,13 +10,32 @@ import { ApiService } from '../api.service';
 })
 export class AppLoginPageComponent implements OnInit {
 
+  testUser: IUser = {} as IUser;
+
   constructor(
     private apiService: ApiService,
     private snackbarService: MatSnackBar,
-  ) { }
+  ) {
+
+  }
 
   ngOnInit(): void {
-    console.log('comes heres')
+    //this.fireRabbitMQCall();
+    
+  }
+
+  public getTestUser() {
+    this.apiService.getTestUser().subscribe({
+      next: (resp) => {
+        this.testUser = resp.body;
+      },
+      error: (err) => {
+        this.showErrorNotification('Error');
+      }
+    });
+  }
+
+  private fireRabbitMQCall(): void {
     this.apiService.getAllUsers().subscribe({
       next: (resp) => {
         console.log('comes in here resp')
