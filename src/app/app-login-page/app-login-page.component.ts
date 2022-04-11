@@ -20,7 +20,7 @@ export class AppLoginPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.fireRabbitMQCall();
+    //this.fireRabbitMQCall();s
     
   }
 
