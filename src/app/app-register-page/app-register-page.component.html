@@ -1,0 +1,57 @@
+<div class="login-container">
+    <mat-card class="main-content">
+        <mat-card-header>
+            <mat-card-title name="login-title">
+                register
+            </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content style="padding-top:15px; display:flex; justify-content: center;align-items: center;">
+            <div class="filler"></div>
+            <div style="flex:2;">
+                <mat-form-field appearance="fill" class="input-field-full-width">
+                    <mat-icon matPrefix *ngIf="shouldShowPrefix('icon')">
+                        alternate_email &nbsp;</mat-icon>
+                    <span matPrefix *ngIf="shouldShowPrefix('span')">@ &nbsp;
+                    </span>
+                    <mat-label name="username-input-label">username</mat-label>
+                    <input matInput [(ngModel)]="registerObject.username" [disabled]="isLoading" name="username-input"
+                        id="username-input">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="input-field-full-width">
+                    <mat-label name="name-input-label">name</mat-label>
+                    <input matInput [(ngModel)]="registerObject.name" [disabled]="isLoading" name="name-input">
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" class="input-field-full-width">
+                    <mat-label name="password-input-label">password</mat-label>
+                    <input matInput [(ngModel)]="registerObject.password" [disabled]="isLoading" name="password-input"
+                        type="password">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="input-field-full-width">
+                    <mat-label name="password-input-label">repeat password</mat-label>
+                    <input matInput [(ngModel)]="registerObject.confirmPassword" [disabled]="isLoading"
+                        name="second-password-input" type="password">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="input-field-full-width">
+                    <mat-label name="password-input-label">email</mat-label>
+                    <input matInput [(ngModel)]="registerObject.email" [disabled]="isLoading" name="email-input"
+                        type="email" (keyup.enter)="onClickRegister()">
+                </mat-form-field>
+            </div>
+            <div class="filler"></div>
+        </mat-card-content>
+        <mat-card-actions style="display:flex; justify-content: center;align-items: center;">
+            <div class="filler"></div>
+            <div style="flex:2">
+                <button mat-raised-button color="primary" (click)="onClickRegister()" *ngIf="!isLoading"
+                    name="register-button" style="width:100%;">
+                    register
+                </button>
+                <mat-spinner *ngIf="isLoading" diameter="35" style="margin:auto; padding-bottom: 10px;"
+                    name="register-loading-spinner"></mat-spinner>
+            </div>
+            <div class="filler"></div>
+        </mat-card-actions>
+    </mat-card>
+</div>

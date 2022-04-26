@@ -1,11 +1,27 @@
-<p>app-login-page works!</p>
-<button mat-button (click)="getTestUser()">press this</button> 
+<mat-dialog-content class="mat-typography">
+    <form class="container">
+        <div class="page-column hide-mobile">
+            <div class="left-column-art"></div>
+        </div>
+        <div class="page-column right-column">
+            <h1 class="login-header-text-position">Login</h1>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Login" [(ngModel)]="loginRequest.username"
+                        required name="usernameInput">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Password"
+                        [(ngModel)]="loginRequest.password" type="password" required name="passwordInput">
+                </mat-form-field>
+            </div>
+            <button class="login-button-position" mat-stroked-button color="primary" (click)="onLogin()">
+                <mat-icon>exit_to_app</mat-icon>
+                Login button
+            </button>
+        </div>
+    </form>
 
-
-<mat-card class="catalog-card">
-    <mat-card-header>
-        <mat-card-title name="cart-title">
-            <h1>{{testUser.username}} {{testUser.created}}</h1>
-        </mat-card-title>
-    </mat-card-header>
-</mat-card>
+</mat-dialog-content>
