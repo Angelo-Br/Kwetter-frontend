@@ -27,7 +27,7 @@ export class ApiService {
 
   /* POST calls */
   registerUser(user: IRegister): Observable<HttpResponse<any>> {
-    return this.http.post<any>(`${this.API_GATEWAY}user`, user, { observe: 'response' });
+    return this.http.post<any>(`${this.API_GATEWAY}register`, user, { observe: 'response' });
   }
 
   loginUser(request: ILoginRequest): Observable<HttpResponse<string>> {

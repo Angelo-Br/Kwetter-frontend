@@ -60,7 +60,7 @@ export class AppLoginPageComponent implements OnInit {
         this.router.navigate(['home']);
       },
       error: (err) => {
-        this.showErrorNotification('Error');
+        this.showErrorNotification(err.error);
       }
     });
   }
@@ -92,10 +92,10 @@ export class AppLoginPageComponent implements OnInit {
   /*
     Show error notification
   */
-    private showErrorNotification(translateableMessage: string): void {
-      this.notificationService.open("error", undefined, {
+    private showErrorNotification(message: string): void {
+      this.notificationService.open(message, undefined, {
         panelClass: 'error-snack',
-        duration: 2500
+        duration: 8500
       });
     }
 
