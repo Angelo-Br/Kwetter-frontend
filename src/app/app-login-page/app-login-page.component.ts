@@ -66,16 +66,16 @@ export class AppLoginPageComponent implements OnInit {
   }
 
 
-  public getTestUser() {
-    this.apiService.getTestUser().subscribe({
-      next: (resp) => {
-        this.testUser = resp.body;
-      },
-      error: (err) => {
-        this.showErrorNotification('Error');
-      }
-    });
-  }
+  // public getTestUser() {
+  //   this.apiService.getTestUser().subscribe({
+  //     next: (resp) => {
+  //       this.testUser = resp.body;
+  //     },
+  //     error: (err) => {
+  //       this.showErrorNotification('Error');
+  //     }
+  //   });
+  // }
 
   private fireRabbitMQCall(): void {
     this.apiService.getAllUsers().subscribe({

@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
+import { ILoggedUser } from './models/logged-user.model';
 import { ILoginRequest } from './models/login.model';
 import { IRegister } from './models/register.model';
 import { IUser } from './models/user.model';
@@ -21,8 +22,12 @@ export class ApiService {
     return this.http.get<Array<IUser>>(`${this.API_GATEWAY}users`, { observe: 'response' });
   }
 
-  getTestUser(): Observable<HttpResponse<IUser>> {
-    return this.http.get<IUser>(`${this.API_GATEWAY}testuser`, { observe: 'response' });
+  getTestUser(): Observable<HttpResponse<ILoggedUser>> {
+    return this.http.get<ILoggedUser>(`${this.API_GATEWAY}testuser`, { observe: 'response' });
+  }
+
+  getLoggedUser(): Observable<HttpResponse<string>> {
+    return this.http.get<string>(`${this.API_GATEWAY}auth/loggeduser`, { observe: 'response' });
   }
 
   /* POST calls */
