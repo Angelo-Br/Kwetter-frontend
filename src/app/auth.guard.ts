@@ -12,7 +12,8 @@ export class AuthGuard implements CanActivate {
     '/login'
   ];
   private urlBlockWhenLoggedOut = [
-    '/home'
+    '/home',
+    '/changeusername'
   ];
 
   constructor(

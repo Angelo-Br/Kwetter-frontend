@@ -11,13 +11,15 @@ import { AppLoginPageComponent } from './app-login-page/app-login-page.component
 import { AppInterceptor } from './app.interceptor';
 import { AppRegisterPageComponent } from './app-register-page/app-register-page.component';
 import { AppHomePageComponent } from './app-home-page/app-home-page.component';
+import { AppChangeusernamePageComponent } from './app-changeusername-page/app-changeusername-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppLoginPageComponent,
     AppRegisterPageComponent,
-    AppHomePageComponent
+    AppHomePageComponent,
+    AppChangeusernamePageComponent
   ],
   imports: [
     BrowserModule,
