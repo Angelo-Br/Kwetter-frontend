@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+
+
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="mat-drawer">
+        <button mat-button (click)="Route('deleteaccount')">deleteaccount</button>
+        <button mat-button (click)="Route('changeusername')">Changeusername</button>
+        <button mat-button (click)="Route('home')">home</button>
+        <button mat-button (click)="Route('register')">register</button>
+        <button mat-button (click)="Route('login')">login</button>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>

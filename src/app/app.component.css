@@ -1,0 +1,12 @@
+.example-container {
+    height: 100%;
+}
+
+::ng-deep .mat-drawer-inner-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    height: 100% !important;
+    background-color: #F5F5F5 !important;
+}

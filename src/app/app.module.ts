@@ -12,6 +12,7 @@ import { AppInterceptor } from './app.interceptor';
 import { AppRegisterPageComponent } from './app-register-page/app-register-page.component';
 import { AppHomePageComponent } from './app-home-page/app-home-page.component';
 import { AppChangeusernamePageComponent } from './app-changeusername-page/app-changeusername-page.component';
+import { AppDeleteaccountPageComponent } from './app-deleteaccount-page/app-deleteaccount-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppChangeusernamePageComponent } from './app-changeusername-page/app-ch
     AppLoginPageComponent,
     AppRegisterPageComponent,
     AppHomePageComponent,
-    AppChangeusernamePageComponent
+    AppChangeusernamePageComponent,
+    AppDeleteaccountPageComponent
   ],
   imports: [
     BrowserModule,

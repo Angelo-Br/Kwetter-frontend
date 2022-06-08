@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { IChangeUsername } from './models/change-username.model';
+import { IDeleteAccount } from './models/delete-account.model';
 import { ILoggedUser } from './models/logged-user.model';
 import { ILoginRequest } from './models/login.model';
 import { IRegister } from './models/register.model';
@@ -42,5 +43,9 @@ export class ApiService {
 
   changeUsername(request: IChangeUsername): Observable<HttpResponse<string>> {
     return this.http.post<string>(`${this.API_GATEWAY}user/changeusername`, request, { observe: 'response' });
+  }
+
+  deleteAccount(request: IDeleteAccount): Observable<HttpResponse<string>> {
+    return this.http.post<string>(`${this.API_GATEWAY}user/deleteuser`, request, { observe: 'response' });
   }
 }

@@ -9,4 +9,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'kwetter-frontend';
 
+  constructor(
+    private router: Router,
+  ){
+
+  }
+  Route(route: string): void {
+    this.router.navigateByUrl(route);
+  }
 }
